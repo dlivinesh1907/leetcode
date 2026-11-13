@@ -3,6 +3,6 @@ class Solution:
         morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
         transformations = set()
         for word in words:
-            transform = "".join(morse[ord(char) - ord('a')] for char in word)
+            transform = "".join(morse[ord(c) - ord('a')] for c in word)
             transformations.add(transform)
         return len(transformations)

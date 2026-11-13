@@ -5,7 +5,7 @@ class Solution:
             if op == '+':
                 record.append(record[-1] + record[-2])
             elif op == 'D':
-                record.append(record[-1] * 2)
+                record.append(2 * record[-1])
             elif op == 'C':
                 record.pop()
             else:

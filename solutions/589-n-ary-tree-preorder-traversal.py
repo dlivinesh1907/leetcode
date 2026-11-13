@@ -3,15 +3,15 @@ class Solution:
         if not root:
             return []
         
+        result = []
         stack = [root]
-        output = []
         
         while stack:
             node = stack.pop()
-            output.append(node.val)
+            result.append(node.val)
             if node.children:
                 for child in reversed(node.children):
                     if child:
                         stack.append(child)
                         
-        return output
+        return result

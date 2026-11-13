@@ -8,15 +8,15 @@ class MyHashSet:
         return key % self.bucket_size
 
     def add(self, key: int) -> None:
-        hash_key = self._hash(key)
-        if key not in self.buckets[hash_key]:
-            self.buckets[hash_key].append(key)
+        bucket_index = self._hash(key)
+        if key not in self.buckets[bucket_index]:
+            self.buckets[bucket_index].append(key)
 
     def remove(self, key: int) -> None:
-        hash_key = self._hash(key)
-        if key in self.buckets[hash_key]:
-            self.buckets[hash_key].remove(key)
+        bucket_index = self._hash(key)
+        if key in self.buckets[bucket_index]:
+            self.buckets[bucket_index].remove(key)
 
     def contains(self, key: int) -> bool:
-        hash_key = self._hash(key)
-        return key in self.buckets[hash_key]
+        bucket_index = self._hash(key)
+        return key in self.buckets[bucket_index]

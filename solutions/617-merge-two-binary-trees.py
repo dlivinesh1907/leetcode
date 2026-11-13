@@ -12,8 +12,8 @@ class Solution:
         if not root2:
             return root1
         
-        merged = TreeNode(root1.val + root2.val)
-        merged.left = self.mergeTrees(root1.left, root2.left)
-        merged.right = self.mergeTrees(root1.right, root2.right)
+        root1.val += root2.val
+        root1.left = self.mergeTrees(root1.left, root2.left)
+        root1.right = self.mergeTrees(root1.right, root2.right)
         
-        return merged
+        return root1

@@ -1,10 +1,17 @@
 class Solution:
     def dominantIndex(self, nums: list[int]) -> int:
-        max_val = max(nums)
-        max_idx = nums.index(max_val)
+        max_val = -1
+        max_idx = -1
+        second_max = -1
         
-        for i, val in enumerate(nums):
-            if i != max_idx and max_val < 2 * val:
-                return -1
+        for i, num in enumerate(nums):
+            if num > max_val:
+                second_max = max_val
+                max_val = num
+                max_idx = i
+            elif num > second_max:
+                second_max = num
                 
-        return max_idx
+        if max_val >= 2 * second_max:
+            return max_idx
+        return -1

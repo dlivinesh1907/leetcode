@@ -20,8 +20,6 @@ class Solution:
     def isSameTree(self, s: TreeNode | None, t: TreeNode | None) -> bool:
         if not s and not t:
             return True
-        if not s or not t:
-            return False
-        if s.val != t.val:
-            return False
-        return self.isSameTree(s.left, t.left) and self.isSameTree(s.right, t.right)
+        if s and t and s.val == t.val:
+            return self.isSameTree(s.left, t.left) and self.isSameTree(s.right, t.right)
+        return False
